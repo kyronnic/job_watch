@@ -18,5 +18,9 @@ def pull_ps_jobs():
     location_select.select_by_visible_text('United States, Remote')
     time.sleep(wait)
 
-    jobs = [x.text for x in driver.find_elements(By.CLASS_NAME, "career-title")]
+    jobs = {x.text: x.get_attribute('href') for x in driver.find_elements(By.CLASS_NAME, "career-title")}
+    print(jobs)
     return jobs
+
+if __name__ == '__main__':
+    pull_ps_jobs()
