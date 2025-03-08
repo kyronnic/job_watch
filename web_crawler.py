@@ -6,7 +6,7 @@ import time
 def pull_ps_jobs():
     url = 'https://www.playstation.com/en-us/corporate/playstation-careers/#listings'
     driver = webdriver.Safari()
-    wait = 3
+    wait = 1.5
 
     driver.get(url)
     driver.implicitly_wait(0.5)
@@ -19,7 +19,6 @@ def pull_ps_jobs():
     time.sleep(wait)
 
     jobs = {x.text: x.get_attribute('href') for x in driver.find_elements(By.CLASS_NAME, "career-title")}
-    print(jobs)
     return jobs
 
 if __name__ == '__main__':
