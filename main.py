@@ -3,9 +3,6 @@ from emailer import send_email
 from history import *
 from web_crawler import pull_ps_jobs
 
-#def build_msg(job_dict):
-
-
 if __name__ == '__main__':
     scraped_jobs = pull_ps_jobs()
     all_new_jobs = create_update(scraped_jobs)
